@@ -9,19 +9,17 @@ class VendorSerializer(serializers.ModelSerializer):
   def to_representation(self, instance):
     representation = super().to_representation(instance)
     data = {
-      "data": {
-        "id": representation['id'],
-        "type": "vendor",
-        "attributes": {
-          "vendor_name": representation['vendor_name'],
-          "first_name": representation['first_name'],
-          "last_name": representation['last_name'],
-          "email": representation['email'],
-          "password": representation['password'],
-        }
+      "id": representation['id'],
+      "type": "vendor",
+      "attributes": {
+        "vendor_name": representation['vendor_name'],
+        "first_name": representation['first_name'],
+        "last_name": representation['last_name'],
+        "email": representation['email'],
+        "password": representation['password'],
       }
     }
-    return data
+    return data #"data": add this out here somehow
 
 class ItemSerializer(serializers.ModelSerializer):
 
