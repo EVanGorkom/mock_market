@@ -25,7 +25,7 @@ class ItemSerializer(serializers.ModelSerializer):
 
   class Meta:
     model = Item
-    fields = ['id', 'item_name', 'vendor', 'price', 'size', 'quantity', 'availability', 'description']
+    fields = ['id', 'item_name', 'vendor', 'price', 'size', 'quantity', 'availability', 'description', 'image']
 
   def to_representation(self, instance):
     representation = super().to_representation(instance)
@@ -41,6 +41,7 @@ class ItemSerializer(serializers.ModelSerializer):
           "quantity": representation['quantity'],
           "availability": representation['availability'],
           "description": representation['description'],
+          "image": representation['image']
         }
       }
     }

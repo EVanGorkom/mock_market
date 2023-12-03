@@ -8,7 +8,7 @@ class Vendor(models.Model):
   password = models.CharField(max_length=55, null=True)
 
   def __str__(self):
-    return self.farm_name
+    return self.vendor_name
 
 class Item(models.Model):
   item_name = models.CharField(max_length=50)
@@ -18,7 +18,7 @@ class Item(models.Model):
   quantity = models.IntegerField(default=1)
   availability = models.BooleanField(default=False)
   description = models.CharField(max_length=50)
-  # img attribute here
+  image = models.ImageField(upload_to='files/images', null=True)
 
   def __str__(self):
     return self.item_name
